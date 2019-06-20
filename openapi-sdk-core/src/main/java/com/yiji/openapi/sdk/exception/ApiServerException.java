@@ -1,0 +1,72 @@
+package com.yiji.openapi.sdk.exception;
+
+/**
+ * OpenApi服务器端异常
+ * 
+ * @author zhike@yiji.com
+ * @date 2014年6月12日
+ */
+public class ApiServerException extends RuntimeException {
+	/** UID */
+	private static final long serialVersionUID = 2148374270769534530L;
+	
+	private String resultCode;
+	private String resultMessage;
+	
+	public ApiServerException() {
+		super();
+	}
+	
+	/**
+	 * @param resultMessage
+	 */
+	public ApiServerException(String resultMessage) {
+		super(resultMessage);
+		this.resultMessage = resultMessage;
+	}
+	
+	/**
+	 * @param resultCode
+	 * @param resultMessage
+	 */
+	public ApiServerException(String resultCode, String resultMessage) {
+		super(resultMessage);
+		this.resultCode = resultCode;
+		this.resultMessage = resultMessage;
+	}
+	
+	public ApiServerException(String resultCode, String resultMessage, Throwable cause) {
+		super(resultMessage, cause);
+		this.resultCode = resultCode;
+		this.resultMessage = resultMessage;
+	}
+	
+	@Override
+	public String getMessage() {
+		return "服务端异常:" + super.getMessage();
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("服务端异常:").append(resultCode).append(":").append(resultMessage);
+		return builder.toString();
+	}
+	
+	public String getResultCode() {
+		return resultCode;
+	}
+	
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
+	}
+	
+	public String getResultMessage() {
+		return resultMessage;
+	}
+	
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
+	}
+	
+}
