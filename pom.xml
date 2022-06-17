@@ -14,7 +14,7 @@
         <commons-lang3.version>3.0</commons-lang3.version>
         <commons-io.version>2.0</commons-io.version>
         <commons-codec.version>1.10</commons-codec.version>
-        <fastjson.version>1.2.11</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <hibernate.validator.version>4.1.0.Final</hibernate.validator.version>
     </properties>
 
